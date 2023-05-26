@@ -1,0 +1,91 @@
+body{
+    background: rgb(255, 255, 207);
+}
+
+h1{
+    text-align: center;
+    color: rgb(255, 154, 154);
+}
+
+.container{
+    width: 800px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px darkgray;
+    margin: auto;
+}
+.left-div{
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+}
+.right-div{
+    width: 50%;
+    float: left;
+}
+input{
+    width: 50%;
+    padding: 10px;
+    box-shadow: 1px 1px 2px darkgray;
+    border: 1px solid seagreen;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+span{
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.tdiv{
+    width: 650px ;
+    margin: 0 auto;
+    padding: 0 auto;
+    display: block;
+}
+
+
+.btn{
+    text-align: center;
+}
+#submit{
+    margin-top: 20px;
+    width: 30%;
+    background: rgb(96, 48, 209);
+    color: rgb(255, 255, 255);
+    padding: 10px ;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 2px 3px 10px darkgray;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color: rgb(8, 1, 51);
+    color: bisque;
+
+}
+#log{
+    font-size: 1.3rem;
+    font: bold;
+    font-style: none;
+   
+}
+#center{
+    text-align: center;
+    margin-top: 20px;
+    font-style: normal;
+}
+
+.log-container{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 5px 5px 5px darkgray;
+}
+.logform{
+
+    width: 600px;
+}
+  
