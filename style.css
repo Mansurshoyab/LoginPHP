@@ -9,7 +9,7 @@ h1{
 
 .container{
     width: 800px;
-    height: 500px;
+    height: 600px;
     background-color: rgb(255, 255, 255);
     box-shadow: 5px 5px 10px darkgray;
     margin: auto;
@@ -87,5 +87,12 @@ span{
 .logform{
 
     width: 600px;
+}
+
+h4{
+    color: blue;
+    border: 1px solid green;
+    text-align: center;
+    padding: 6px;
 }
   

@@ -1,3 +1,54 @@
+<?php
+ $msg = "Alert box";
+ $connect = mysqli_connect("localhost","root","","new_register");
+  
+  if(isset($_POST['submit'])){
+     $name = $_POST['name'];
+     $roll = $_POST['roll'];
+     $fname = $_POST['fname'];
+     $mname = $_POST['mname'];
+
+     $d_birth = $_POST['d_birth'];
+     $email = $_POST['email'];
+     $pass = $_POST['pass'];
+     $c_pass = $_POST['c_pass'];
+
+     // Check duplicate email
+     $email_check = "SELECT * FROM register WHERE email ='$email' ";
+     $email_query = mysqli_query($connect,$email_check);
+     $num_row = mysqli_num_rows($email_query);
+     if($num_row>0){
+        $msg = "Email alrady exist ,  Please try another email";
+
+     }else{
+        // check password and confirm password
+        if($pass==$c_pass){
+             //check special characters
+           $specialChars = preg_match('@[^\w]@', $pass);
+            //check special characters || password length == 8 || passlen<8
+            if(!$specialChars || strlen($pass) == 8 || strlen($pass) < 8 ){
+                $msg = "vaiya apni akti special charaeter den and password length 8 er beshi din";
+            }else{
+                $insert = " INSERT INTO register(name,roll,fname,mname,d_birth,email,pass,c_pass) 
+                VALUES('$name','$roll','$fname','$mname','$d_birth','$email','$pass','$c_pass') ";
+
+                $query = mysqli_query($connect,$insert);
+                if($query){
+                    $msg="register success";
+                }else{
+                    $msg="register faild";
+                }
+            }
+        }
+        else{
+            $msg = "Password and confirm dosen't match";
+        }
+        // insert query working
+
+     }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +62,8 @@
     <h1>Registration Form</h1>
     <form method="POST">
     <div class="container">
+        <br><br>
+        <h4><?php  echo $msg  ?></h4>
         <div class="left-div">
             <span>Name</span>
             <div class="tdiv">
